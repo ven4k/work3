@@ -1,0 +1,11 @@
+{
+    "application_id": "Номер заявки",
+    "material_id": "Номер материала",
+    "material_item_name": "Наименование",
+    "material_item_count": "Количество",
+    "fullname_client": "ФИО клиента",
+    "date_create": "Дата создания",
+    "service_type": "Услуга",
+    "status": "Статус"
+}
+

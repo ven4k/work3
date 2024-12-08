@@ -1,0 +1,16 @@
+[
+  { 
+    "catalog_id": "1333695",
+    "name": "Доска",
+    "leftCount": "90",
+    "unitType": "Пачка",
+    "cost": "2000"
+  },
+  { 
+    "catalog_id": "1358242",
+    "name": "Шифер",
+    "leftCount": "90",
+    "unitType": "Пачка",
+    "cost": "2000"
+  }
+]
