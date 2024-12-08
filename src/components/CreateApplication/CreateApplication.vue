@@ -29,8 +29,8 @@
     <h2 v-if="formValues.service.length || formValues.catalog.length">Общая цена: {{ totalCost }} ₽</h2>
     <MainButton
       class="createBtn"
-      @click="handleCreateData"
       :disabled="isDisabledBtn"
+      @click="handleCreateData"
       >Создать</MainButton
     >
   </div>
@@ -63,7 +63,7 @@ const totalCost = computed(() => {
     return acc += Number(item.cost * item.count)
   }, 0)
   const serviceCost = formValues.value.service.reduce((acc, item) => {
-    return acc += Number(item.cost)
+    return acc += Number(item.cost * item.count)
   }, 0)
   return catalogCost + serviceCost
 })

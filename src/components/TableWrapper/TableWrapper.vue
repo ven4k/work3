@@ -52,8 +52,8 @@
                 @click="
                   handleAcceptAplication(
                     row.application_id,
-                    row.catalog_item_count,
-                    row.catalog_id
+                    row.material_item_count,
+                    row.material_id
                   )
                 "
               >
@@ -121,7 +121,6 @@ const handleAcceptAplication = (applicationId, itemCount, itemId) => {
 
 .table {
   width: 100%;
-  min-width: 800px;
   border-collapse: collapse;
   font-size: 16px;
   text-align: left;

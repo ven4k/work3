@@ -3,9 +3,13 @@
     "material_id": "Номер материала",
     "material_item_name": "Наименование",
     "material_item_count": "Количество",
+    "material_item_cost": "Цена материала",
     "fullname_client": "ФИО клиента",
     "date_create": "Дата создания",
     "service_type": "Услуга",
-    "status": "Статус"
+    "service_count": "Площадь, машины",
+    "service_cost": "Цена услуг",
+    "status": "Статус",
+    "totalCost": "Общая цена"
 }
 

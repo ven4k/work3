@@ -6,6 +6,9 @@
         <span v-for="(item, index) in selectedItems" :key="index" class="selected-item">
           {{ item.name }} <span v-if="labelData !== 'Услуги'">({{ item.count }})</span>
         </span>
+        <span v-if="!selectedItems.length" style="user-select: none;">
+          Не выбрано
+        </span>
       </div>
       <div class="options" v-show="isOpenList">
         <label v-for="item in selectData" :key="item">
@@ -17,7 +20,7 @@
           />
           {{ item.name }}
           <input
-            v-if="isItemSelected(item.name) && labelData !== 'Услуги'"
+            v-if="isItemSelected(item.name)"
             type="number"
             v-model.number="getSelectedItem(item.name).count"
             :min="1"
@@ -44,14 +47,19 @@ const props = defineProps({
 const selectData = computed(() => props.items.map(item => {
   if(props.dataName === 'service') {
     return {
+      altName: item.name,
       name: `${item.name} ${item.cost} ₽`,
+      count: 1,
+      id: item.service_id,
       cost: item.cost
     };
   }
   if(props.dataName === 'catalog') {
     return {
-      name: item.name,
+      altName: item.name,
+      name: `${item.name} ${item.cost} ₽`,
       cost: item.cost,
+      count: 1,
       leftCount: item.leftCount,
       id: item.catalog_id
     }
@@ -68,7 +76,7 @@ const handleCheckItem = (item) => {
   if (selectedItem) {
     selectedItems.value = selectedItems.value.filter((selected) => selected.name !== item.name);
   } else {
-    selectedItems.value.push({ name: item.name, count: 1, cost: item.cost, id: item.id });
+    selectedItems.value.push({ name: item.name, count: 1, cost: item.cost, id: item.id, altName: item.altName  });
   }
   emit("updateFormValues", selectedItems.value);
 };

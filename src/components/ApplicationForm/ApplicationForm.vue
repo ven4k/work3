@@ -70,20 +70,27 @@ const getCurrentDate = computed(() => {
 
 const handleAddData = (data) => {
   const { clients, catalog, status, service } = data;
-
+  const catalogCost = catalog.reduce((acc, item) => {
+    return acc += Number(item.cost * item.count)
+  }, 0)
+  const serviceCost = service.reduce((acc, item) => {
+    return acc += Number(item.cost * item.count)
+  }, 0)
   const addClientFullName = clients?.split(" ").slice(0, 3).join(" ");
 
   const addData = {
     application_id: Date.now().toString().slice(-6),
-    catalog_id: catalog.map((el) => el.id).join(","),
-    catalog_item_name: catalog.map((el) => el.name).join(","),
-    catalog_item_count: catalog.map((el) => el.count).join(","),
+    material_id: catalog.map((el) => el.id).join(", "),
+    material_item_name: catalog.map((el) => el.name).join(", "),
+    material_item_count: catalog.map((el) => el.count).join(", "),
+    material_item_cost: `${catalogCost} ₽`,
     fullname_client: addClientFullName,
     date_create: getCurrentDate.value,
-    operation_type: service
-      .map((el) => el.name.split(" ").slice(0, 1))
-      .join(","),
+    service_type: service.map((el) => el.altName).join(", "),
+    service_count: service.map(el => el.count).join(', '),
+    service_cost: `${serviceCost} ₽`,
     status: status,
+    totalCost: `${catalogCost + serviceCost} ₽`,
   };
   applicationsBodyDataManager.value = [
     ...applicationsBodyDataManager.value,
@@ -99,7 +106,7 @@ const handleAddData = (data) => {
 };
 const handleDeleteData = (data) => {
   applicationsBodyDataManager.value = applicationsBodyDataManager.value.filter(
-    (el) => el.applicationId !== data.applicationId
+    (el) => el.application_id !== data.application_id
   );
   updateAplicationData();
   notify({

@@ -30,6 +30,10 @@ const contentData = shallowRef([
     component: Service,
   },
   {
+    componentTitle: "Клиенты",
+    component: Clients,
+  },
+  {
     componentTitle: "Заявки",
     component: ApplicationForm,
   },
