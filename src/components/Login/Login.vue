@@ -32,6 +32,7 @@
   const isWrongData = ref(false);
   
   onMounted(() => {
+    sessionStorage.clear()
     sessionStorage.setItem("login", "admin");
     sessionStorage.setItem("password", "admin");
     if(sessionStorage.getItem('isLogged')) {
