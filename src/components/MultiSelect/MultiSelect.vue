@@ -20,6 +20,7 @@
           />
           {{ item.name }}
           <input
+            style="margin-left: 6px;"
             v-if="isItemSelected(item.name)"
             type="number"
             v-model.number="getSelectedItem(item.name).count"
@@ -29,7 +30,7 @@
         </label>
       </div>
     </div>
-    <div v-if="selectedItems.length">Цена: {{ selectedItemsPrice }} ₽</div>
+    <div v-if="selectedItems.length" style="margin: 6px 0">Цена: {{ selectedItemsPrice }} ₽</div>
     <div v-if="isEmptyCatalog">Извините, выбранного вами товара нет</div>
   </div>
 </template>
@@ -120,22 +121,34 @@ const selectedItemsPrice = computed(() => selectedItems.value.reduce((acc, item)
 .select-container {
   position: relative;
   width: 100%;
-  border: 1px solid #ccc;
+  border: 1px solid #222;
+  background: #1f2124;
   height: 100%;
   cursor: pointer;
+  border-radius: .3em;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
 .selected-items {
   display: flex;
   flex-wrap: wrap;
   padding: 10px;
+  gap: 5px;
 }
 
 .selected-item {
-  background-color: #f0f0f0;
-  padding: 5px;
+  background-color: #27292c;
+  color: #fff;
+  padding: 5px 10px;
   margin: 2px;
   border-radius: 5px;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+}
+
+.selected-item:hover {
+  background-color: #333;
 }
 
 .options {
@@ -143,13 +156,31 @@ const selectedItemsPrice = computed(() => selectedItems.value.reduce((acc, item)
   top: 100%;
   left: 0;
   width: 100%;
-  background-color: white;
+  background-color: #1f2124;
   z-index: 1;
-  border: 1px solid #ccc;
+  border: 1px solid #222;
+  border-radius: .3em;
+  box-shadow: 0 5px 10px 5px rgba(0, 0, 0, 0.2);
+  margin-top: 5px;
+  max-height: 200px;
+  overflow-y: auto;
 }
 
 .options label {
   display: block;
   margin: 5px 0;
+  padding: 10px;
+  color: #fff;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.options label:hover {
+  background: #27292c;
+}
+
+.options input[type="checkbox"] {
+  margin-right: 10px;
+  accent-color: #ffbb00; /* Цвет чекбокса */
 }
 </style>

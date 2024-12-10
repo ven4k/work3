@@ -114,68 +114,87 @@ const handleAcceptAplication = (applicationId, itemCount, itemId) => {
 </script>
 
 <style lang="scss">
-.tableWrapper {
-  overflow-x: auto;
-  table-layout: fixed !important;
-}
-
-.table {
+table {
   width: 100%;
+  min-width: 500px;
   border-collapse: collapse;
-  font-size: 16px;
-  text-align: left;
-  border-radius: 5px;
+  margin: 20px 0;
+  font-size: 12px;
+  color: #fff;
+  background: #111;
+  border: 1px solid #191919;
+  border-radius: .4em;
+  box-shadow: 0 0 8px 0px #fb0;
   overflow: hidden;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 
-.table thead tr {
-  background-color: #ffa73a;
-  color: #000;
+table th,
+table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #222;
+}
+
+table th {
+  background: #27292c;
+  color: #ffbb00;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+table tr:nth-child(even) {
+  background: #1f2124;
+}
+
+table tr:hover {
+  background: #27292c;
+}
+
+table td {
+  font-size: 13px;
+}
+
+table td:first-child {
   font-weight: bold;
 }
 
-.table th,
-.table td {
-  padding: 12px 15px;
+table td:last-child {
+  text-align: right;
 }
 
-.table tbody tr {
-  border-bottom: 1px solid #dddddd;
+table a {
+  color: #0d93ff;
+  text-decoration: none;
 }
 
-.table tbody tr:nth-of-type(even) {
-  background-color: #fff3e0;
+table a:hover {
+  text-decoration: underline;
 }
 
-.table tbody tr:last-of-type {
-  border-bottom: 2px solid #ff8c00;
+table .actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
 }
 
-.table tbody tr:hover {
-  background-color: #ffe0b2;
+table .actions button {
+  background: #fb0;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  border-radius: .3em;
+  box-shadow: 0 0 8px 0px #fb0;
+  color: #873C00;
   cursor: pointer;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 5px 10px;
 }
 
-.tableAddBtn {
-  margin: 10px 0 0 0;
-  background-color: #ff8c00;
-  color: #ffffff;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
+table .actions button:hover {
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), inset 0 -10px 10px rgba(255, 255, 255, 0.1); 
 }
-
-.tableAddBtn:hover {
-  background-color: #ffa500;
-}
-
 .emptyTable {
-  font-size: 24px;
   text-align: center;
-  padding: 20px;
-  color: #ff8c00;
+  width: 100%;
+  padding: 10px;
 }
 </style>

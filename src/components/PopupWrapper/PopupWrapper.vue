@@ -40,6 +40,7 @@ watch(() => props.isOpenPopup, (newValue) => {
 
 <style lang="scss">
 .popup__wrapper {
+  color: #fb0;
   position: absolute;
   z-index: 999;
   width: 100%;
@@ -54,14 +55,13 @@ watch(() => props.isOpenPopup, (newValue) => {
   align-items: center;
 }
 .popup__content {
-  background-color: #fff;
+  background-color: #2b2b2b;
   padding: 20px;
   border: 6px;
   max-width: 800px;
-  max-height: 800px;
+  max-height: 1000px;
   width: 100%;
   border-radius: 8px;
-  overflow-y: auto;
   position: relative;
 }
 .popup__close {

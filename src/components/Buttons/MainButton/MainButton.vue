@@ -13,8 +13,8 @@
   height: 45px;
   padding: 8px;
   border-radius: 5px;
-  border: 2.5px solid #ffcc80;
-  box-shadow: 0px 0px 20px -20px;
+  border: 2 solid #ffcc80;
+  box-shadow: 0 0 8px 0px #fb0;
   cursor: pointer;
   background-color: #ffa726;
   transition: all 0.2s ease-in-out 0ms;

@@ -25,7 +25,7 @@
         </select>
       </template>
     </div>
-    <hr v-if="formValues.service.length || formValues.catalog.length"/>
+    <hr style="margin-top: 30px;" v-if="formValues.service.length || formValues.catalog.length"/>
     <h2 v-if="formValues.service.length || formValues.catalog.length">Общая цена: {{ totalCost }} ₽</h2>
     <MainButton
       class="createBtn"
@@ -120,10 +120,10 @@ const handleCloseList = () => {
   width: 100%;
   padding: 10px;
   font-size: 16px;
-  border: 1px solid #ffcc80;
+  border: none;
   border-radius: 4px;
-  background-color: #fff;
-  color: #333;
+  background-color: #1f2124;;
+  color: #f7f7f7;
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -153,7 +153,7 @@ const handleCloseList = () => {
 .createBtn {
   margin-top: 24px;
   background-color: #ffa726;
-  color: white;
+  color: #111;
   border: none;
   padding: 10px 20px;
   border-radius: 5px;

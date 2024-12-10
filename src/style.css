@@ -1,5 +1,4 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
   font-synthesis: none;
@@ -8,15 +7,16 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-
 body {
   display: flex;
+  background: linear-gradient(to bottom right, rgb(0, 0, 0), rgb(78, 78, 78));
   align-items: center;
+
+  font-family: "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  color: #fff;
   min-width: 320px;
   min-height: 100vh;
-  background-color: #fffdf0
 }
-
 
 #app {
   max-width: 1920px;

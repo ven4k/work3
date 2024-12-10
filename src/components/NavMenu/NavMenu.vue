@@ -22,7 +22,7 @@ const props = defineProps({
   top: 0;
   left: 0;
   border-right: 1px solid #ffa726;
-  background-color: #f7f7f7;
+  background: #1b1b1b;
   width: 100%;
   height: 80px;
   display: flex;
@@ -34,6 +34,7 @@ const props = defineProps({
     cursor: pointer;
   }
   &__activeItem {
+    color: #1b1b1b;
     border-radius: 8px;
     background-color: #ffa726 ;
   }

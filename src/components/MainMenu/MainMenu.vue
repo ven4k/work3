@@ -98,7 +98,7 @@ const handleClickExit = () => {
 
 .exitBtn {
   position: absolute;
-  background-color: #ff6347;
+  background-color: #fb0;
   color: #fff;
   border: none;
   border-radius: 4px;
@@ -106,6 +106,8 @@ const handleClickExit = () => {
   font-size: 16px;
   cursor: pointer;
   top: 8px;
+  color: #111;
+  font-weight: 700;
   right: 8px;
   transition: background-color 0.3s ease;
 
